@@ -1,6 +1,6 @@
 {
   "name": "@vechain/connex-loader",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/vechain/connex/tree/master/packages/loader#readme",
   "dependencies": {
-    "@vechain/connex-framework": "^1.1.2",
-    "@vechain/connex-driver": "^1.2.0-beta5"
+    "@vechain/connex-driver": "^1.2.0",
+    "@vechain/connex-framework": "^1.1.3"
   }
 }
