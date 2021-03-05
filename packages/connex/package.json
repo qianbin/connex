@@ -2,16 +2,16 @@
   "name": "@vechain/connex",
   "version": "2.0.0",
   "description": "Standard interface to connect DApp with VeChain and user",
-  "main": "dist/index.js",
+  "main": "dist/connex.js",
   "unpkg": "dist/connex.min.js",
   "jsdelivr": "dist/connex.min.js",
-  "types": "dist/index.d.ts",
+  "types": "esm/index.d.ts",
   "files": [
     "dist",
     "esm"
   ],
   "scripts": {
-    "build": "rm -rf dist/ && ../../node_modules/.bin/tsc -p . && webpack",
+    "build": "rm -rf dist/ esm/ && ../../node_modules/.bin/tsc -p . && webpack",
     "lint": "../../node_modules/.bin/tslint -p .",
     "prepack": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"

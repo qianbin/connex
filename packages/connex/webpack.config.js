@@ -2,11 +2,10 @@ const path = require('path')
 const webpack = require('webpack')
 const TerserPlugin = require('terser-webpack-plugin')
 
-module.exports = {
-    entry: './dist/index.js',
+const baseConfig = {
+    entry: './esm/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'connex.min.js',
         library: 'Connex',
         libraryTarget: 'umd',
         libraryExport: 'default'
@@ -30,6 +29,22 @@ module.exports = {
     devtool: 'source-map',
     performance: {
         hints: false
+    }
+}
+
+module.exports = [{
+    ...baseConfig,
+    output: {
+        ...baseConfig.output,
+        filename: 'connex.js'
+    },
+    optimization: { minimize: false }
+},
+{
+    ...baseConfig,
+    output: {
+        ...baseConfig.output,
+        filename: 'connex.min.js'
     },
     optimization: {
         minimizer: [
@@ -41,5 +56,5 @@ module.exports = {
                 }
             }),
         ]
-    },
-}
+    }
+}]
