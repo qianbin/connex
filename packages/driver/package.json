@@ -1,6 +1,6 @@
 {
   "name": "@vechain/connex-driver",
-  "version": "2.0.2",
+  "version": "2.0.4",
   "description": "Connex framework driver implementation",
   "main": "dist/index.js",
   "module": "esm/index.js",
@@ -33,7 +33,7 @@
   "devDependencies": {
     "@types/lru-cache": "^5.1.0",
     "@types/ws": "^6.0.1",
-    "@vechain/connex-framework": "^2.0.2"
+    "@vechain/connex-framework": "^2.0.4"
   },
   "dependencies": {
     "@vechain/connex-types": "^2.0.2",

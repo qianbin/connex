@@ -1,6 +1,6 @@
 {
   "name": "@vechain/connex",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Standard interface to connect DApp with VeChain and user",
   "main": "dist/connex.js",
   "unpkg": "dist/connex.min.js",
@@ -43,8 +43,8 @@
     "webpack-cli": "^4.1.0"
   },
   "dependencies": {
-    "@vechain/connex-driver": "^2.0.2",
-    "@vechain/connex-framework": "^2.0.2",
+    "@vechain/connex-driver": "^2.0.4",
+    "@vechain/connex-framework": "^2.0.4",
     "randombytes": "^2.1.0",
     "thor-devkit": "^2.0.1"
   }
