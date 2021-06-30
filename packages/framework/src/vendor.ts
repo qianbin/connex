@@ -1,6 +1,7 @@
 import * as R from './rules'
 import * as V from 'validator-ts'
 import { abi } from 'thor-devkit'
+import BigNumber from 'bignumber.js'
 
 export function newVendor(driver: Connex.Driver): Connex.Vendor {
     return {
@@ -61,10 +62,14 @@ export function newTxSigningService(readyDriver: Promise<Connex.Driver>, msg: Co
             return this
         },
         request() {
+            const transformedMsg = msg.map(c => ({
+                ...c,
+                value: new BigNumber(c.value).toString(10),
+            }))
             return (async () => {
                 try {
                     const driver = await readyDriver
-                    return await driver.signTx(msg, opts)
+                    return await driver.signTx(transformedMsg, opts)
                 } catch (err) {
                     throw new Rejected(err.message)
                 }

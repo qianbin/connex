@@ -33,6 +33,7 @@
   "homepage": "https://github.com/vechain/connex/tree/master/packages/framework#readme",
   "dependencies": {
     "@vechain/connex-types": "^2.0.2",
+    "bignumber.js": "^7.2.1",
     "thor-devkit": "^2.0.1",
     "validator-ts": "^0.9.1"
   },

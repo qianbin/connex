@@ -1,5 +1,6 @@
 import { decodeRevertReason } from './revert-reason'
 import * as R from './rules'
+import BigNumber from 'bignumber.js'
 
 export function newExplainer(readyDriver: Promise<Connex.Driver>, clauses: Connex.VM.Clause[]): Connex.VM.Explainer {
     const opts: {
@@ -35,7 +36,7 @@ export function newExplainer(readyDriver: Promise<Connex.Driver>, clauses: Conne
             const transformedClauses = clauses.map(c => {
                 return {
                     to: c.to ? c.to.toLowerCase() : null,
-                    value: c.value.toString().toLowerCase(),
+                    value: new BigNumber(c.value).toString(10),
                     data: (c.data || '0x').toLowerCase()
                 }
             })
